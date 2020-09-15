@@ -33,15 +33,19 @@
             <p class="text-justify">{{ post.text|linebreaks }}</p>
             <p>
             <div class="card-footer">
-                <h6 align="right">Author: {{ post.owner }}</h6>
+                <div class="float-right">Author: {{ post.owner }}</div>
                 <small class="text-muted">Create: {{ post.date_added|date:'M d, Y H:i' }}</small>
                 <small class="text-muted">Edit: {{ post.date_edit|date:'M d, Y H:i' }}</small>
                 <small class="text-muted">Published: {{ post.date_publication|date:'M d, Y H:i' }}</small>
             </div>
             </p>
             {% if post.owner.id == request.user.id %}
-            <p><a href="{% url 'blogs:edit_post' post.id %}" class="btn btn-outline-dark" role="button">Edit</a>
-                <a href="{% url 'blogs:delete_post' post.id %}" class="btn btn-outline-danger" role="button">X</a></p>
+            <a href="{% url 'blogs:edit_post' post.id %}" class="btn btn-outline-dark" role="button">Edit</a>
+            <div class="float-right">
+                <a href="{% url 'blogs:delete_post' post.id %}" class="btn btn-outline-danger"
+                   role="button">Delete</a>
+            </div>
+            <p></p>
             {% endif %}
             <a href="{% url 'blogs:index' %}" class="btn btn-outline-secondary btn-block" role="button">to public
                 posts</a>
