@@ -33,10 +33,11 @@
             <p class="text-justify">{{ post.text|linebreaks }}</p>
             <p>
             <div class="card-footer">
-                <div class="float-right">Author: {{ post.owner }}</div>
-                <small class="text-muted">Create: {{ post.date_added|date:'M d, Y H:i' }}</small>
-                <small class="text-muted">Edit: {{ post.date_edit|date:'M d, Y H:i' }}</small>
-                <small class="text-muted">Published: {{ post.date_publication|date:'M d, Y H:i' }}</small>
+                <div class="float-right">Author:
+                    <br>{{ post.owner }}</br></div>
+                <small class="text-muted">{{ post.date_added|date:'M d, Y H:i' }} Create</small>
+                <br><small class="text-muted">{{ post.date_edit|date:'M d, Y H:i' }} Edit</small></br>
+                <small class="text-muted">{{ post.date_publication|date:'M d, Y H:i' }} Published</small>
             </div>
             </p>
             {% if post.owner.id == request.user.id %}
