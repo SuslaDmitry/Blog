@@ -1,0 +1,76 @@
+{% extends "blogs/base.html" %}
+
+{% block header %}
+
+<div class="pt-2">
+    <h2 align="center">Posts with tag <b>{{ tag.title }}</b></h2>
+</div>
+
+{% endblock header %}
+
+{% block content %}
+<div class="card-group">
+    {% for post in tag_page.object_list %}
+    <div class="col-md-6 p-2">
+        <div class="card">
+            {% if post.image %}
+            <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title|linebreaks }}</h5>
+                {% if post.text|length > 500 %}
+                <p class="text-justify">{{ post.text|truncatechars:500 }}</p>
+                {% else %}
+                <p class="text-justify">{{ post.text|linebreaks }}</p>
+                {% endif %}
+                <div class="pb-3">
+                    Tags:
+                    {% for tag in post.tags.all %}
+                    <a href="{% url 'blogs:tag_detail' tag.id %}">
+                        #{{ tag.title }}
+                    </a>
+                    {% empty %}
+                    none
+                    {% endfor %}
+                </div>
+                <p><a href="{% url 'blogs:post_details' post.id %}" class="btn btn-outline-dark btn-block"
+                      role="button">Read</a></p>
+                <div class="card-footer">
+                    <div class="float-right">Author: {{ post.owner }}</div>
+                    <small class="text-muted">{{ post.date_added|date:'M d, Y H:i' }} Create</small>
+                    <br><small class="text-muted">{{ post.date_edit|date:'M d, Y H:i' }} Edit</small></br>
+                    <small class="text-muted">{{ post.date_publication|date:'M d, Y H:i' }} Published</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    There are no posts in this category.
+    {% endfor %}
+</div>
+
+{% if tag_posts|length > 10 %}
+<nav aria-label="...">
+    <ul class="pagination">
+        <li class="page-item {% if not prev_tag_page_url %} disabled {% endif %}">
+            <a class="page-link" href="{{ prev_tag_page_url }}" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+
+        {% for n in tag_page.paginator.page_range %}
+        {% if tag_page.number == n %}
+        <li class="page-item active" aria-current="page">
+            <a class="page-link" href="?page={{ n }}">{{ n }}<span class="sr-only">(current)</span></a>
+        </li>
+        {% elif n > tag_page.number|add:-3 and n < tag_page.number|add:3 %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        <li class="page-item {% if not next_tag_page_url %} disabled {% endif %}">
+            <a class="page-link" href="{{ next_tag_page_url }}">Next</a>
+        </li>
+    </ul>
+</nav>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "blogs/base.html" %}
+{% load bootstrap4 %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block content %}
+
+<div class="p-2">
+    <div class="card mb-4">
+        {% if post.image %}
+        <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+        {% endif %}
+        <div class="card-body">
+            {% if post.owner.id == request.user.id %}
+            {% if post.public %}
+            <h5>
+                {{ post.title|linebreaks }}
+                <a href="{% url 'blogs:privat_public' post.id %}" class="badge badge-success">Public</a>
+            </h5>
+            {% else %}
+            <h5>
+                {{ post.title|linebreaks }}
+                <a href="{% url 'blogs:privat_public' post.id %}" class="badge badge-dark">Private</a>
+            </h5>
+            {% endif %}
+            {% else %}
+            <h5 class="card-title">{{ post.title|linebreaks }}</h5>
+            {% endif %}
+
+
+            <p class="text-justify">{{ post.text|linebreaks }}</p>
+            <p>
+            <div class="card-footer">
+                <h6 align="right">Author: {{ post.owner }}</h6>
+                <small class="text-muted">Create: {{ post.date_added|date:'M d, Y H:i' }}</small>
+                <small class="text-muted">Edit: {{ post.date_edit|date:'M d, Y H:i' }}</small>
+                <small class="text-muted">Published: {{ post.date_publication|date:'M d, Y H:i' }}</small>
+            </div>
+            </p>
+            {% if post.owner.id == request.user.id %}
+            <p><a href="{% url 'blogs:edit_post' post.id %}" class="btn btn-outline-dark" role="button">Edit</a>
+                <a href="{% url 'blogs:delete_post' post.id %}" class="btn btn-outline-danger" role="button">X</a></p>
+            {% endif %}
+            <a href="{% url 'blogs:index' %}" class="btn btn-outline-secondary btn-block" role="button">to public
+                posts</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

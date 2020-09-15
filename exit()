@@ -1,0 +1,113 @@
+[33mcommit 08f3f51869580dd185c846a4e2b0d7f5b4a00e14[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: dima <dima@example.com>
+Date:   Sat Aug 8 19:00:39 2020 +0300
+
+    Release for GCP.v1
+
+[33mcommit b14818471f7344056ccc23f754d6adceaf6e7ee2[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 18:53:06 2020 +0300
+
+    Update base.html
+
+[33mcommit bf75ee5680cd9da868bfa93e7cf0d744b15ad294[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 18:45:55 2020 +0300
+
+    Update models.py
+
+[33mcommit 1e4e94515f13206f523662bd3e284487afebed12[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 18:10:27 2020 +0300
+
+    Update settings.py
+
+[33mcommit 1f6a83b955dede75ec5ade4fa8b65d83a1513500[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:51:47 2020 +0300
+
+    Update settings.py
+
+[33mcommit 4052c9161cc4b3fba8783041bac1e39a4b524138[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:45:16 2020 +0300
+
+    Update settings.py
+
+[33mcommit 36ef50919ed5c59c84fc565adba5dd5864ce7e9a[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:43:20 2020 +0300
+
+    Update .gitignore
+
+[33mcommit 36bdca7e9485c3d4186cbb10f8daf2f104b874f9[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:42:40 2020 +0300
+
+    Update settings.py
+
+[33mcommit a37481db5847e48d106df4e564a0aabebb058979[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:21:56 2020 +0300
+
+    Update settings.py
+
+[33mcommit d1170904471e187f264ec0426d467288359048cc[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:21:01 2020 +0300
+
+    Update settings.py
+
+[33mcommit 019e4d8be5db1c9a58ef0345e4f865ba2f69f4e3[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:08:32 2020 +0300
+
+    Update settings.py
+
+[33mcommit 0d8130a4b1c41378f6cd6214109aa548f8331642[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:07:11 2020 +0300
+
+    Update settings.py
+
+[33mcommit 2216cd9b3cea098e7482ac7e02be69291e5ae97f[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 17:06:39 2020 +0300
+
+    Update settings.py
+
+[33mcommit 264c6f455ae1759f57a1bd22cd1db6173f65c4d7[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Sat Aug 8 00:13:38 2020 +0300
+
+    Update settings.py
+
+[33mcommit f6dbb5e151d4a6460f98da3ee8ad9b51ee8dc759[m
+Author: dima <dima@example.com>
+Date:   Sat Aug 8 00:01:19 2020 +0300
+
+    A
+
+[33mcommit c7b9cf65c36262ba17d89c08626a4a22f6ce5355[m
+Author: dima <dima@example.com>
+Date:   Fri Aug 7 23:55:47 2020 +0300
+
+    B
+
+[33mcommit 08061661e45c4427ea5f4e0d665fcddc843fabd3[m
+Author: dima <dima@example.com>
+Date:   Fri Aug 7 23:25:24 2020 +0300
+
+    Blog on GCP.v1 Edit requiarements
+
+[33mcommit 9ff0eb46424f4f246268fd8593e033f40bb56315[m
+Author: dima <dima@example.com>
+Date:   Fri Aug 7 22:59:13 2020 +0300
+
+    Blog on GCP.v1
+
+[33mcommit affbb371a9d9e45120e17c8ccba4f3e07cfbcabf[m
+Author: SuslaDmitry <67871011+SuslaDmitry@users.noreply.github.com>
+Date:   Fri Aug 7 22:37:34 2020 +0300
+
+    Initial commit

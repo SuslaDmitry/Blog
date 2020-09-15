@@ -1,0 +1,90 @@
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'blogs:index' %}">Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
+                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="navbar-nav mr-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'blogs:owner_posts' %}">My posts</a>
+                </li>
+                <div class="pl-2">
+                    <li class="nav-item">
+                        <a href="{% url 'blogs:new_post' %}" class="btn btn-outline-light" role="button">Add Post</a>
+                    </li>
+                </div>
+                <div class="pl-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Tags</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <div class="pl-2">
+                                <a href="{% url 'blogs:new_tag' %}" class="btn btn-outline-dark" role="button">Add/Delete
+                                    Tag</a>
+                            </div>
+                            {% for tag in tags %}
+                            <a class="dropdown-item" href="{% url 'blogs:tag_detail' tag.id %}">{{ tag.title }}</a>
+                            {% endfor %}
+                        </div>
+                </div>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav justify-content-end">
+                {% if user.is_authenticated %}
+                <div class="pr-2">
+                <span class="navbar-text">
+                Hello, {{ user.username }}.
+              </span>
+                </div>
+                <div class="pr-2">
+                    <li><a class="nav-link" href="{% url 'users:logout' %}">Log out</a></li>
+                </div>
+                <li><a class="nav-link" href="{% url 'admin:index' %}">Admin panel</a></li>
+                {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'users:login' %}">Log in</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        {% block header %}{% endblock header %}
+    </div>
+    <div>
+        {% block content %}{% endblock content %}
+    </div>
+</div>
+
+</body>
+</html>
